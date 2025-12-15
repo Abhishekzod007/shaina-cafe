@@ -18,7 +18,7 @@ export default function CategoryPage() {
     const loadItems = async () => {
       try {
         const res = await fetch(
-          `http://localhost:5000/api/menu/${main}/${sub}`
+          `https://shaina-cafe-backend.onrender.com/api/menu/${main}/${sub}`
         );
 
         const data = await res.json();

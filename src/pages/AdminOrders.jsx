@@ -15,7 +15,7 @@ const statusColors = {
 const BEEP_BASE64 =
   "UklGRhQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YRAAAAAA"; // tiny silent-ish placeholder
 // NOTE: If you want a real beep, replace BEEP_BASE64 with an actual short beep WAV base64.
-const socket = io("http://localhost:5000", {
+const socket = io("https://shaina-cafe-backend.onrender.com", {
   withCredentials: true,
   transports: ["websocket"], // 👈 IMPORTANT
 });
@@ -65,7 +65,7 @@ const stopAlarm = () => {
   // fetch orders from backend
   const fetchOrders = useCallback(async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/orders");
+      const res = await fetch("https://shaina-cafe-backend.onrender.com/api/orders");
       if (!res.ok) {
         console.error("Fetch orders failed:", await res.text());
         return;
@@ -147,7 +147,7 @@ if (hasPending) {
   // update a single order's status on backend
   const updateStatus = async (id, newStatus) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/orders/${id}/status`, {
+      const res = await fetch(`https://shaina-cafe-backend.onrender.com/api/orders/${id}/status`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status: newStatus }),
@@ -174,7 +174,7 @@ if (hasPending) {
   const deleteOrder = async (id) => {
     if (!window.confirm("Delete this order?")) return;
     try {
-      const res = await fetch(`http://localhost:5000/api/orders/${id}`, {
+      const res = await fetch(`https://shaina-cafe-backend.onrender.com/api/orders/${id}`, {
         method: "DELETE",
       });
       if (!res.ok) {

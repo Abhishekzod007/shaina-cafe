@@ -72,7 +72,7 @@ export default function SubcategoryPage() {
   useEffect(() => {
     const loadItems = async () => {
       const res = await fetch(
-        `http://localhost:5000/api/menu/${formattedMain}/${formattedSub}`
+        `https://shaina-cafe-backend.onrender.com/api/menu/${formattedMain}/${formattedSub}`
       );
       const data = await res.json();
       setItems(data || []);

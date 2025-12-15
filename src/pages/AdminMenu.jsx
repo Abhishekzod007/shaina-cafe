@@ -74,7 +74,7 @@ export default function AdminMenu() {
   // -------------------------------------------
   const fetchItems = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/menu/", {
+      const res = await fetch("https://shaina-cafe-backend.onrender.com/api/menu/", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -160,7 +160,7 @@ export default function AdminMenu() {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:5000/api/menu", {
+      const res = await fetch("https://shaina-cafe-backend.onrender.com/api/menu", {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
         body: fd,
@@ -267,7 +267,7 @@ export default function AdminMenu() {
     setLoading(true);
 
     try {
-      const res = await fetch(`http://localhost:5000/api/menu/${editingId}`, {
+      const res = await fetch(`https://shaina-cafe-backend.onrender.com/api/menu/${editingId}`, {
         method: "PUT",
         headers: { Authorization: `Bearer ${token}` },
         body: fd,
@@ -294,7 +294,7 @@ export default function AdminMenu() {
     if (!window.confirm("Delete this item?")) return;
 
     try {
-      const res = await fetch(`http://localhost:5000/api/menu/${id}`, {
+      const res = await fetch(`https://shaina-cafe-backend.onrender.com/api/menu/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
