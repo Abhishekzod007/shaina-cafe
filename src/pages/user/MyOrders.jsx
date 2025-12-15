@@ -237,24 +237,30 @@ const downloadInvoice = (order) => {
                 </p>
 
                 {/* BUTTONS */}
-                <div className="flex gap-3 mt-4">
+                <div className="flex flex-wrap gap-2 mt-4 sm:gap-3">
                   <button
                     onClick={() => setSelectedOrder(order)}
-                    className="px-4 py-2 bg-amber-600 text-white rounded-lg"
+                    className="px-3 py-1.5 text-sm
+  sm:px-4 sm:py-2 sm:text-base
+  bg-amber-600 text-white rounded-lg"
                   >
                     View Details
                   </button>
 
                   <button
                     onClick={() => reorder(order)}
-                    className="px-4 py-2 bg-green-600 text-white rounded-lg"
+                    className="px-3 py-1.5 text-sm
+  sm:px-4 sm:py-2 sm:text-base
+  bg-amber-600 text-white rounded-lg"
                   >
                     Reorder
                   </button>
 
                   <button
                     onClick={() => downloadInvoice(order)}
-                    className="px-4 py-2 bg-blue-600 text-white rounded-lg"
+                    className="px-3 py-1.5 text-sm
+  sm:px-4 sm:py-2 sm:text-base
+  bg-amber-600 text-white rounded-lg"
                   >
                     Download Invoice
                   </button>
