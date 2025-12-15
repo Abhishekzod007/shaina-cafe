@@ -1,3 +1,3 @@
-export const globalRefs = {
+export const cartIconRef = {
     cartIcon: null,
 };
