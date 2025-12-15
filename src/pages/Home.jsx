@@ -110,7 +110,7 @@ const scrollLeft = () =>
           "https://shainacafe-rawatsar.com/assets/gallery3.jpg",
           "https://shainacafe-rawatsar.com/assets/gallery4.jpg"
         ],
-        "telephone": "+91-XXXXXXXXXX",
+        "telephone": "+91-9253039964",
         "priceRange": "₹200–400",
         "openingHours": "Mo-Su 10:00-22:00",
         "servesCuisine": [
