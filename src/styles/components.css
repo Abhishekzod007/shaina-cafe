@@ -1,0 +1,212 @@
+/* ===============================
+   HERO BACKGROUND
+================================*/
+.hero {
+  position: relative;
+  height: 85vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: 
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url("https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1920&q=80");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  animation: zoomIn 20s ease-in-out infinite alternate;
+}
+
+/* Cinematic Zoom Effect */
+@keyframes zoomIn {
+  0% { background-size: 100% auto; }
+  100% { background-size: 110% auto; }
+}
+
+/* ===============================
+   FLOATING FOG OVERLAY
+================================*/
+.fog {
+  position: absolute;
+  inset: 0;
+  background: url("https://cdn.pixabay.com/photo/2017/08/30/01/05/mist-2695269_1280.png");
+  background-size: cover;
+  opacity: 0.25;
+  animation: fogMove 18s linear infinite;
+}
+
+@keyframes fogMove {
+  0% { transform: translateX(-5%); }
+  100% { transform: translateX(5%); }
+}
+
+/* ===============================
+   GOLD PARTICLES
+================================*/
+.particles::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#ffcc66 2px, transparent 2px);
+  background-size: 20px 20px;
+  opacity: 0.15;
+  animation: sparkle 6s linear infinite;
+}
+
+@keyframes sparkle {
+  0% { transform: translateY(0); opacity: 0.2; }
+  50% { opacity: 0.4; }
+  100% { transform: translateY(-20px); opacity: 0.2; }
+}
+
+/* ===============================
+   HERO CONTENT BOX
+================================*/
+.hero-content {
+  z-index: 10;
+  text-align: center;
+  padding: 40px 60px;
+  background: rgba(10, 10, 10, 0.7);
+  border-radius: 20px;
+  border: 2px solid rgba(255, 180, 0, 0.7);
+
+  box-shadow: 0 0 25px rgba(255, 170, 0, 0.7);
+  backdrop-filter: blur(10px);
+  animation: glow 4s infinite alternate ease-in-out;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 15px rgba(255,160,0,0.3); }
+  to { box-shadow: 0 0 40px rgba(255,180,0,1); }
+}
+
+/* ===============================
+   TEXT + BUTTON
+================================*/
+.hero-title {
+  font-size: 3rem;
+  color: white;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.hero-sub {
+  font-size: 1.2rem;
+  color: #eee;
+  margin-bottom: 25px;
+}
+
+/* Typing effect */
+.typing {
+  display: inline-block;
+  border-right: 3px solid #ffb600;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 3s steps(30), blink 0.7s infinite;
+}
+
+@keyframes typing {
+  from { width: 0px; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* BUTTON */
+.hero-btn {
+  padding: 12px 28px;
+  background: #c96a16;
+  color: white;
+  font-size: 1.1rem;
+  border-radius: 40px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.hero-btn:hover {
+  background: #ff9500;
+  transform: scale(1.05);
+}
+
+/* ===============================
+   MOBILE RESPONSIVE
+================================*/
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 25px 20px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+  }
+
+  .hero-btn {
+    font-size: 1rem;
+  }
+}
+
+
+.gradient-animated-bg {
+  background: linear-gradient(135deg, #847b7d, #fb7070, #b29587, #e0f381, #be8fed);
+  background-size: 400% 400%;
+  animation: gradientMotion 18s ease infinite;
+}
+
+@keyframes gradientMotion {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 50%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+
+
+.tag-badge {
+  background: #fff5cc;
+  color: #a86a00;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.tag-pill {
+  padding: 4px 12px;
+  background: linear-gradient(90deg, #ffeab7, #fff5dd, #ffeab7);
+  color: #a46200;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  animation: gradientMove 3s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
