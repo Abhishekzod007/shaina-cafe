@@ -22,7 +22,7 @@ export default function Profile() {
   // 🔥 Update profile API
   const updateProfile = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/auth/update-profile", {
+      const res = await fetch("https://shaina-cafe-backend.onrender.com/api/auth/update-profile", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

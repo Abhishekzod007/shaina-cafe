@@ -7,7 +7,7 @@ export default function OrderTracking() {
 
   const loadOrders = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/orders/my-orders", {
+      const res = await fetch("https://shaina-cafe-backend.onrender.com/api/orders/my-orders", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
