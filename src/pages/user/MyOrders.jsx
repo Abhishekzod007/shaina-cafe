@@ -292,8 +292,11 @@ const downloadInvoice = (order) => {
 
       {/* DETAILS MODAL (unchanged) */}
       {selectedOrder && (
-        <div className="fixed inset-0 bg-black/40 flex justify-center items-start pt-20 z-50">
-          <div className="bg-white p-6 rounded-xl w-full max-w-lg shadow-xl max-h-[90vh] overflow-y-auto relative">
+        <div className="fixed inset-0 bg-black/40 flex justify-center items-center sm:items-start sm:pt-20 z-50 px-3 sm:px-0">
+          <div className=" bg-white rounded-xl shadow-xl relative overflow-y-auto
+    w-full max-w-[92%] sm:max-w-lg
+    p-4 sm:p-6
+    max-h-[80vh] sm:max-h-[90vh]">
             <button
               className="absolute top-3 right-3 text-xl"
               onClick={() => setSelectedOrder(null)}
