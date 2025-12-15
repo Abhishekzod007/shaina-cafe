@@ -224,7 +224,7 @@ const downloadInvoice = (order) => {
                 className="p-5 bg-white rounded-xl shadow border border-amber-200"
               >
                 <div className="flex justify-between items-center">
-                  <p className="text-xl font-bold">
+                  <p className="text-lg font-bold">
                     Order #{order.orderId}
                   </p>
 
