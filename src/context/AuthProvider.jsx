@@ -12,7 +12,7 @@ export default function AuthProvider({ children }) {
   // ------------------------------
   const loadProfile = async (tokenValue) => {
     try {
-      const res = await fetch("http://localhost:5000/api/auth/profile", {
+      const res = await fetch("https://shaina-cafe-backend.onrender.com/api/auth/profile", {
         headers: { Authorization: `Bearer ${tokenValue}` },
       });
 
@@ -53,7 +53,7 @@ export default function AuthProvider({ children }) {
   // ---------------- LOGIN WITH OTP ----------------
   const loginWithOTP = async (phone) => {
     try {
-      const res = await fetch("http://localhost:5000/api/auth/login-otp", {
+      const res = await fetch("https://shaina-cafe-backend.onrender.com/api/auth/login-otp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ phone }),
@@ -87,7 +87,7 @@ export default function AuthProvider({ children }) {
   // ---------------- LOGIN WITH EMAIL ----------------
   const loginWithEmail = async (email, password , captchaToken) => {
     try {
-      const res = await fetch("http://localhost:5000/api/auth/login-email", {
+      const res = await fetch("https://shaina-cafe-backend.onrender.com/api/auth/login-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password , captchaToken }),
