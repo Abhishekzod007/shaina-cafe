@@ -55,41 +55,72 @@ const scrollLeft = () =>
 
   return (
     <div className="animate-fadeIn">
-      <Helmet>
+     <Helmet>
+  {/* ================= META TITLE & DESCRIPTION ================= */}
+  <title>
+    Shaina Café Rawatsar | Best Vegetarian Café on Ganganagar–Jaipur Highway
+  </title>
 
-  {/* META TITLE & DESCRIPTION */}
-  <title>Shaina Café Rawatsar | Best Vegetarian Café on Ganganagar–Jaipur Highway</title>
   <meta
     name="description"
-    content="Shaina Café Rawatsar is a family-friendly vegetarian café on the Ganganagar–Jaipur Highway near Bank of Baroda. Offering burgers, shakes, coffee, wraps, pizza, kid-friendly games, party space, and free parking. Open 10 AM – 10 PM."
+    content="Shaina Café Rawatsar is a family-friendly vegetarian café on the Ganganagar–Jaipur Highway near Bank of Baroda. Enjoy burgers, shakes, coffee, pizza, wraps, kid-friendly indoor games, party space, and free parking. Open daily 10 AM – 10 PM."
   />
 
-  {/* KEYWORDS */}
+  {/* ================= KEYWORDS ================= */}
   <meta
     name="keywords"
-    content="cafe near me, Rawatsar cafe, Shaina cafe Rawatsar, highway cafe Rajasthan, vegetarian cafe, kid friendly cafe, party cafe Rawatsar, family cafe Rawatsar, best cafe in Rawatsar"
+    content="Shaina Café Rawatsar, cafe near me, Rawatsar cafe, best cafe in Rawatsar, vegetarian cafe Rajasthan, highway cafe Ganganagar Jaipur, family cafe Rawatsar, kids friendly cafe, party cafe Rawatsar, coffee burgers shakes Rawatsar"
   />
 
-  {/* OPEN GRAPH (Social Media Preview) */}
-  <meta property="og:title" content="Shaina Café Rawatsar – Best Veg Café on Ganganagar–Jaipur Highway" />
+  {/* ================= CANONICAL ================= */}
+  <link
+    rel="canonical"
+    href="https://shainacafe-rawatsar.com/"
+  />
+
+  {/* ================= OPEN GRAPH (SOCIAL PREVIEW) ================= */}
+  <meta
+    property="og:title"
+    content="Shaina Café Rawatsar – Best Vegetarian Café in Rawatsar"
+  />
   <meta
     property="og:description"
-    content="Premium vegetarian café with burgers, shakes, coffee, indoor games for kids, party bookings, and free parking. Visit Shaina Café Rawatsar today!"
+    content="Premium vegetarian café on Ganganagar–Jaipur Highway with burgers, shakes, coffee, indoor games for kids, party bookings, and free parking."
   />
-  <meta property="og:image" content="https://yourdomain.com/cover.jpg" />
-  <meta property="og:url" content="https://yourdomain.com" />
+  <meta
+    property="og:image"
+    content="https://shainacafe-rawatsar.com/assets/cafeimg.jpg"
+  />
+  <meta
+    property="og:url"
+    content="https://shainacafe-rawatsar.com/"
+  />
   <meta property="og:type" content="restaurant" />
 
-  {/* JSON-LD STRUCTURED DATA FOR GOOGLE SEO */}
+  {/* ================= JSON-LD STRUCTURED DATA ================= */}
   <script type="application/ld+json">
     {`
       {
         "@context": "https://schema.org",
         "@type": "CafeOrCoffeeShop",
         "name": "Shaina Café Rawatsar",
+        "url": "https://shainacafe-rawatsar.com/",
         "image": [
-          "https://yourdomain.com/images/cafe1.jpg",
-          "https://yourdomain.com/images/cafe2.jpg"
+          "https://shainacafe-rawatsar.com/assets/cafeimg.jpg",
+          "https://shainacafe-rawatsar.com/assets/gallery3.jpg",
+          "https://shainacafe-rawatsar.com/assets/gallery4.jpg"
+        ],
+        "telephone": "+91-XXXXXXXXXX",
+        "priceRange": "₹200–400",
+        "openingHours": "Mo-Su 10:00-22:00",
+        "servesCuisine": [
+          "Vegetarian",
+          "Cafe",
+          "Coffee",
+          "Burgers",
+          "Pizza",
+          "Shakes",
+          "Snacks"
         ],
         "address": {
           "@type": "PostalAddress",
@@ -104,19 +135,6 @@ const scrollLeft = () =>
           "latitude": 29.2747,
           "longitude": 74.4029
         },
-        "url": "https://yourdomain.com",
-        "telephone": "+91-0000000000",
-        "priceRange": "₹200–400",
-        "openingHours": "Mo-Su 10:00-22:00",
-        "servesCuisine": [
-          "Vegetarian",
-          "Cafe",
-          "Burgers",
-          "Shakes",
-          "Coffee",
-          "Pizza",
-          "Snacks"
-        ],
         "amenityFeature": [
           { "@type": "LocationFeatureSpecification", "name": "Parking Available", "value": true },
           { "@type": "LocationFeatureSpecification", "name": "Kid Friendly", "value": true },
@@ -124,7 +142,7 @@ const scrollLeft = () =>
           { "@type": "LocationFeatureSpecification", "name": "Family Seating", "value": true },
           { "@type": "LocationFeatureSpecification", "name": "Party Friendly", "value": true }
         ],
-        "description": "Shaina Café Rawatsar is a premium vegetarian café located on the Ganganagar–Jaipur Highway. Known for burgers, shakes, coffee, snacks, indoor games, party space, and quick service.",
+        "description": "Shaina Café Rawatsar is a premium vegetarian café located on the Ganganagar–Jaipur Highway. Known for burgers, shakes, coffee, snacks, indoor games, family seating, party space, and quick service.",
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": "4.9",
@@ -133,8 +151,8 @@ const scrollLeft = () =>
       }
     `}
   </script>
-
 </Helmet>
+
 
 
       {/* HERO */}
