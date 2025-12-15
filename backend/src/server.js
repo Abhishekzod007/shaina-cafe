@@ -19,7 +19,16 @@ const server = http.createServer(app);
 app.use(helmet());
 
 // ✅ middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://shaina-cafe.vercel.app",
+    "https://shainacafe-rawatsar.com",
+    "https://www.shainacafe-rawatsar.com"
+  ],
+  credentials: true
+}));
+
 app.use(express.json());
 
 // routes
