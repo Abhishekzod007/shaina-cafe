@@ -9,7 +9,15 @@ export default function Hero() {
     <section className="hero">
 
       {/* Background fog overlay */}
-      <div className="fog"></div>
+      <div ><img
+  src="https://cdn.pixabay.com/photo/2017/08/30/01/05/mist-2695269_800.webp"
+  alt=""
+   aria-hidden="true"
+  loading="lazy"
+  decoding="async"
+  className="absolute inset-0 w-full h-full object-cover opacity-25 pointer-events-none"
+/>
+</div>
 
       {/* Gold particles */}
       <div className="particles"></div>
