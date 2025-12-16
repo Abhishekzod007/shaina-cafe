@@ -7,9 +7,9 @@ import { Helmet } from "react-helmet";
 // import kitkatImg from "../assets/kitkat shake.jpeg";
 // import paneerImg from "../assets/Paneer tikka.jpeg";
 // import virginMojitoImg from "../assets/Mojito.jpeg";
-import concertImg from "../assets/Concert.jpeg";
-import HppyBirthdayImg from "../assets/Happy Birthday.jpeg";
-import partImg from "../assets/birthday party.jpeg";
+import concertImg from "../assets/hllmg.webp";
+import HppyBirthdayImg from "../assets/HallImg.webp";
+import partImg from "../assets/PartyHallImg.webp";
 
 // 3D images 
 import pizza from "../assets/food/pizzaimage.webp";
@@ -246,6 +246,7 @@ const scrollLeft = () =>
             >
               <img 
                 loading="lazy"
+                aria-hidden="true"
                 src={item.img}
                 alt={item.name}
                 className="w-40 h-40 object-contain min-w-40 min-h-40  !w-40 !h-40"
@@ -267,7 +268,7 @@ const scrollLeft = () =>
           <p className="text-gray-700 max-w-3xl mx-auto mb-10 text-lg">
   Looking for the perfect place to celebrate <strong>birthday parties,
   anniversaries, kitty parties or group events in Rawatsar?.</strong> {" "}
-  Shaina Café offers a beautifully decorated indoor space with 
+  Shaina Café offers a beautifully decorated indoor space with {" "}
   <strong>comfortable seating, premium food, customised arrangements and 
   dedicated service</strong>.  
   We are one of the most preferred <strong>family-friendly cafés and party venues 
@@ -276,19 +277,43 @@ const scrollLeft = () =>
 
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div
-              className="rounded-2xl h-52 bg-cover bg-center shadow-lg"
-              style={{ backgroundImage: `url(${concertImg})` }}
-            ></div>
-            <div
-              className="rounded-2xl h-52 bg-cover bg-center shadow-lg"
-              style={{ backgroundImage: `url(${HppyBirthdayImg})` }}
-            ></div>
-            <div
-              className="rounded-2xl h-52 bg-cover bg-center shadow-lg"
-              style={{ backgroundImage: `url(${partImg})` }}
-            ></div>
-          </div>
+  {/* Image 1 */}
+  <div className="relative h-52 rounded-2xl shadow-lg overflow-hidden">
+    <img
+      src={concertImg}
+      alt="Live music and events at Shaina Café Rawatsar"
+       aria-hidden="true"
+      loading="lazy"
+      decoding="async"
+      className="absolute inset-0 w-full h-full object-cover"
+    />
+  </div>
+
+  {/* Image 2 */}
+  <div className="relative h-52 rounded-2xl shadow-lg overflow-hidden">
+    <img
+      src={HppyBirthdayImg}
+      alt="Birthday party celebration at Shaina Café Rawatsar"
+       aria-hidden="true"
+      loading="lazy"
+      decoding="async"
+      className="absolute inset-0 w-full h-full object-cover"
+    />
+  </div>
+
+  {/* Image 3 */}
+  <div className="relative h-52 rounded-2xl shadow-lg overflow-hidden">
+    <img
+      src={partImg}
+      alt="Party and group celebration space at Shaina Café Rawatsar"
+       aria-hidden="true"
+      loading="lazy"
+      decoding="async"
+      className="absolute inset-0 w-full h-full object-cover"
+    />
+  </div>
+</div>
+
 
           <button
             onClick={() => (window.location.href = "/contact")}
