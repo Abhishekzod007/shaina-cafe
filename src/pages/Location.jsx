@@ -59,7 +59,7 @@ export default function Location() {
           >
             <img
               src={img}
-               aria-hidden="true"
+               decoding="async"
       loading="lazy"
               alt={`Shaina Café Rawatsar location ${i + 1}`}
               className="w-full h-56 object-cover hover:scale-110 transition-transform duration-500"
@@ -82,7 +82,7 @@ export default function Location() {
       <div className="overflow-hidden rounded-2xl shadow-xl mb-16 bg-white/30 backdrop-blur-md">
         <img
           loading="lazy"
-           aria-hidden="true"
+           decoding="async"
           src={roadmap}
           alt="Shaina Café highway access photo"
           className="w-full max-h-[700px] object-cover hover:scale-105 transition-transform duration-700"
