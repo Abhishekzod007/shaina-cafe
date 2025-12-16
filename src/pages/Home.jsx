@@ -58,19 +58,16 @@ const scrollLeft = () =>
      <Helmet>
   {/* ================= META TITLE & DESCRIPTION ================= */}
   <title>
-    Shaina Café Rawatsar | Best Vegetarian Café on Ganganagar–Jaipur Highway
+    Shaina Café Rawatsar | Best Vegetarian Café on Ganganagar–Jaipur Highway  near Hanumangarh
   </title>
 
   <meta
     name="description"
-    content="Shaina Café Rawatsar is a family-friendly vegetarian café on the Ganganagar–Jaipur Highway near Bank of Baroda. Enjoy burgers, shakes, coffee, pizza, wraps, kid-friendly indoor games, party space, and free parking. Open daily 10 AM – 10 PM."
+    content="Shaina Café Rawatsar is a family-friendly vegetarian café  near Hanumangarh on the Ganganagar–Jaipur Highway near Bank of Baroda. Enjoy burgers, shakes, coffee, pizza, wraps, kid-friendly indoor games, party space, and free parking. Open daily 10 AM – 10 PM."
   />
 
   {/* ================= KEYWORDS ================= */}
-  <meta
-    name="keywords"
-    content="Shaina Café Rawatsar, cafe near me, Rawatsar cafe, best cafe in Rawatsar, vegetarian cafe Rajasthan, highway cafe Ganganagar Jaipur, family cafe Rawatsar, kids friendly cafe, party cafe Rawatsar, coffee burgers shakes Rawatsar"
-  />
+  
 
   {/* ================= CANONICAL ================= */}
   <link
@@ -85,11 +82,11 @@ const scrollLeft = () =>
   />
   <meta
     property="og:description"
-    content="Premium vegetarian café on Ganganagar–Jaipur Highway with burgers, shakes, coffee, indoor games for kids, party bookings, and free parking."
+    content="Premium vegetarian café on Ganganagar–Jaipur Highway  near Hanumangarh with burgers, shakes, coffee, indoor games for kids, party bookings, and free parking."
   />
   <meta
     property="og:image"
-    content="https://shainacafe-rawatsar.com/assets/cafeimg.jpg"
+    content="https://shainacafe-rawatsar.com/assets/cafeimg.webp"
   />
   <meta
     property="og:url"
@@ -106,9 +103,9 @@ const scrollLeft = () =>
         "name": "Shaina Café Rawatsar",
         "url": "https://shainacafe-rawatsar.com/",
         "image": [
-          "https://shainacafe-rawatsar.com/assets/cafeimg.jpg",
-          "https://shainacafe-rawatsar.com/assets/gallery3.jpg",
-          "https://shainacafe-rawatsar.com/assets/gallery4.jpg"
+          "https://shainacafe-rawatsar.com/assets/cafeimg.webp",
+          "https://shainacafe-rawatsar.com/assets/gallery3.webp",
+          "https://shainacafe-rawatsar.com/assets/gallery4.webp"
         ],
         "telephone": "+91-9253039964",
         "priceRange": "₹200–400",
@@ -127,6 +124,7 @@ const scrollLeft = () =>
           "streetAddress": "Ganganagar–Jaipur Highway, near Bank of Baroda",
           "addressLocality": "Rawatsar",
           "addressRegion": "Rajasthan",
+          "areaServed": "Hanumangarh District",
           "postalCode": "335524",
           "addressCountry": "IN"
         },
@@ -168,7 +166,7 @@ const scrollLeft = () =>
 
           <p className="text-center max-w-3xl mx-auto text-gray-700 mb-12 text-lg">
   Shaina Café is one of the <strong>top-rated cafés in Rawatsar</strong>,
-  located right on the <strong>Ganganagar–Jaipur Highway (NH-62)</strong>.
+  located right on the <strong>Ganganagar–Jaipur Highway (NH-62) near Hanumangarh, Rajasthan. </strong>
   We are known for our <strong>freshly prepared vegetarian snacks, premium shakes, 
   handcrafted coffee, and quick service</strong>.  
   Our café is a popular stop for <strong>travellers, families, bikers, students</strong> {" "}  
@@ -246,7 +244,6 @@ const scrollLeft = () =>
             >
               <img 
                 loading="lazy"
-                aria-hidden="true"
                 src={item.img}
                 alt={item.name}
                 className="w-40 h-40 object-contain min-w-40 min-h-40  !w-40 !h-40"
@@ -272,7 +269,7 @@ const scrollLeft = () =>
   <strong>comfortable seating, premium food, customised arrangements and 
   dedicated service</strong>.  
   We are one of the most preferred <strong>family-friendly cafés and party venues 
-  near Rawatsar</strong>.
+  near Rawatsar, Hanumangarh</strong>.
 </p>
 
 
