@@ -1,10 +1,10 @@
 import MapEmbed from "../components/MapEmbed";
 import "../styles/components.css";
 
-import map1 from "../assets/location1.jpg";
-import map2 from "../assets/location2.jpg";
-import map3 from "../assets/location3.jpg";
-import roadmap from "../assets/roadmap.jpg";
+import map1 from "../assets/Location1.webp";
+import map2 from "../assets/Location2.webp";
+import map3 from "../assets/Location3.webp";
+import roadmap from "../assets/Roadmap.webp";
 
 export default function Location() {
   return (
@@ -59,6 +59,8 @@ export default function Location() {
           >
             <img
               src={img}
+               aria-hidden="true"
+      loading="lazy"
               alt={`Shaina Café Rawatsar location ${i + 1}`}
               className="w-full h-56 object-cover hover:scale-110 transition-transform duration-500"
             />
@@ -80,9 +82,10 @@ export default function Location() {
       <div className="overflow-hidden rounded-2xl shadow-xl mb-16 bg-white/30 backdrop-blur-md">
         <img
           loading="lazy"
+           aria-hidden="true"
           src={roadmap}
-          alt="Shaina Café highway access map"
-          className="w-full max-h-[420px] object-cover hover:scale-105 transition-transform duration-700"
+          alt="Shaina Café highway access photo"
+          className="w-full max-h-[700px] object-cover hover:scale-105 transition-transform duration-700"
         />
       </div>
 
