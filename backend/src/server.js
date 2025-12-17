@@ -9,7 +9,7 @@ import menuRoutes from "./routes/menuRoutes.js";
 import orderRoutes from "./routes/orderRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
 import { initSocket } from "./socket.js";
-
+import { apiLimiter } from "./middleware/rateLimit.js"; 
 dotenv.config();
 
 const app = express();
@@ -30,6 +30,7 @@ app.use(cors({
 }));
 
 app.use(express.json());
+app.use("/api", apiLimiter);
 
 // routes
 app.use("/api/menu", menuRoutes);

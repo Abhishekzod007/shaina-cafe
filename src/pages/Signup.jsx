@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
+import { Turnstile } from "@marsidev/react-turnstile";
 
 export default function Signup() {
   const navigate = useNavigate();
@@ -13,6 +14,7 @@ export default function Signup() {
     password: "",
   });
 
+  const [captchaToken, setCaptchaToken] = useState(null); // 🔐 CAPTCHA
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -28,14 +30,26 @@ export default function Signup() {
   // ---------------- SUBMIT (REGISTER) ----------------
   const handleSignup = async (e) => {
     e.preventDefault();
+
+    // 🔴 CAPTCHA CHECK
+    if (!captchaToken) {
+      return setError("Please verify captcha");
+    }
+
     setLoading(true);
 
     try {
-      const res = await fetch("https://shaina-cafe-backend.onrender.com/api/auth/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
+      const res = await fetch(
+        "https://shaina-cafe-backend.onrender.com/api/auth/register",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            ...form,
+            captchaToken, // ✅ send to backend
+          }),
+        }
+      );
 
       const data = await res.json();
 
@@ -45,10 +59,10 @@ export default function Signup() {
         return;
       }
 
-      // Auto login after signup (reuse loginWithEmail)
-      await loginWithEmail(form.email, form.password);
+      // Auto login after signup
+      await loginWithEmail(form.email, form.password, captchaToken);
 
-      navigate("/dashboard/user"); // redirect after signup
+      navigate("/dashboard/user");
     } catch (err) {
       console.error("Signup error:", err);
       setError("Server error");
@@ -110,6 +124,16 @@ export default function Signup() {
             className="border p-3 rounded-lg bg-amber-100"
             required
           />
+
+          {/* 🛡️ CLOUDFLARE TURNSTILE */}
+          <div className="mt-2">
+            <Turnstile
+              siteKey="0x4AAAAAACGmM0HxdRwa-hBy"
+              onSuccess={(token) => setCaptchaToken(token)}
+              onError={() => setCaptchaToken(null)}
+              options={{ theme: "light" }}
+            />
+          </div>
 
           <button
             type="submit"

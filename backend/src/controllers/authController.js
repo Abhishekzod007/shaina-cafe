@@ -1,7 +1,8 @@
 import User from "../models/User.js";
 import generateToken from "../utils/generateToken.js";
 import bcrypt from "bcrypt";
-import { verifyTurnstile } from "../utils/verifyTurnstile.js";
+//import { verifyTurnstile } from "../utils/verifyTurnstile.js";
+import fetch from "node-fetch";
 
 export const loginWithOTP = async (req , res) => {
     // logic here 
@@ -112,8 +113,30 @@ export const getProfile = async (req , res) => {
 export const registerUser = async (req , res) => {
   
   try {
-    const { name, email, phone, password } = req.body;
+    const { name, email, phone, password, captchaToken } = req.body;
 
+     if (!captchaToken) {
+      return res.status(400).json({ msg: "Captcha missing" });
+    }
+
+    // 🔐 VERIFY CAPTCHA (INLINE – SAME AS LOGIN)
+    const verifyRes = await fetch(
+      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          secret: process.env.CLOUDFLARE_TURNSTILE_SECRET,
+          response: captchaToken,
+        }),
+      }
+    );
+
+    const captchaData = await verifyRes.json();
+
+    if (!captchaData.success) {
+      return res.status(403).json({ msg: "Captcha verification failed" });
+    }
     if (!name || !email || !phone || !password)
       return res.status(400).json({ msg: "All fields are required" });
 
