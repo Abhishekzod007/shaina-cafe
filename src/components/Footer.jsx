@@ -1,4 +1,5 @@
 import { Instagram, Phone, MapPin, Clock , Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -45,14 +46,16 @@ export default function Footer() {
         <div className="md:col-span-2">
           <h3 className="font-semibold text-lg mb-3">Quick Links</h3>
           <div className="flex flex-col gap-1 text-amber-800">
-            <a href="/" className="hover:text-amber-900 transition">Home</a>
-            <a href="/menu" className="hover:text-amber-900 transition">Menu</a>
-            <a href="/gallery" className="hover:text-amber-900 transition">Gallery</a>
-            <a href="/location" className="hover:text-amber-900 transition">Location</a>
-            <a href="/contact" className="hover:text-amber-900 transition">Contact</a>
+            <Link to="/" className="hover:text-amber-900 transition">Home</Link>
+    <Link to="/menu" className="hover:text-amber-900 transition">Menu</Link>
+    <Link to="/gallery" className="hover:text-amber-900 transition">Gallery</Link>
+    <Link to="/location" className="hover:text-amber-900 transition">Location</Link>
+    <Link to="/contact" className="hover:text-amber-900 transition">Contact</Link>
+            <Link to="/privacy-policy">Privacy Policy</Link>
+
           </div>
         </div>
-
+ 
         {/* Map */}
         <div className="md:col-span-3 md:pr-4">
           <h3 className="font-semibold text-lg mb-3">Find Us</h3>

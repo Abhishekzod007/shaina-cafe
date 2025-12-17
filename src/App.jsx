@@ -31,7 +31,7 @@ import AdminMenu from "./pages/AdminMenu";
 import SubcategoryPage from "./pages/SubcategoryPage.jsx";
 import UserDashboard from "./pages/user/UsrDashboard.jsx";
 import Signup from "./pages/Signup.jsx";
-
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 export default function App() {
   useEffect(() => {
     AOS.init({
@@ -69,6 +69,9 @@ export default function App() {
 
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+
+         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+
         <Route
           path="/admin"
           element={
@@ -111,6 +114,7 @@ export default function App() {
         />
 
         <Route path="*" element={<NotFound />} />
+       
       </Routes>
 
       <Footer />
