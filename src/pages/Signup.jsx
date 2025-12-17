@@ -60,7 +60,7 @@ export default function Signup() {
       }
 
       // Auto login after signup
-      await loginWithEmail(form.email, form.password, captchaToken);
+      
 
       navigate("/dashboard/user");
     } catch (err) {
