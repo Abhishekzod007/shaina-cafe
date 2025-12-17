@@ -62,7 +62,7 @@ export default function Signup() {
       // Auto login after signup
       
 
-      navigate("/dashboard/user");
+      navigate("/login");
     } catch (err) {
       console.error("Signup error:", err);
       setError("Server error");
