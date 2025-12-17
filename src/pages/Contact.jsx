@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Turnstile } from "@marsidev/react-turnstile";
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -7,15 +8,26 @@ export default function Contact() {
     message: ""
   });
 
-  const ownerNumber = "919253039964"; // <-- Replace with Shaina Café WhatsApp Number
+  const [captchaToken, setCaptchaToken] = useState(null);
+  const [error, setError] = useState(null);
+
+  const ownerNumber = "919253039964"; // Shaina Café WhatsApp
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+    setError(null);
   };
 
   const sendWhatsApp = () => {
+    // 🔴 basic validation
     if (!form.name || !form.phone || !form.message) {
-      alert("Please fill all fields!");
+      setError("Please fill all fields");
+      return;
+    }
+
+    // 🔐 CAPTCHA CHECK
+    if (!captchaToken) {
+      setError("Please verify captcha");
       return;
     }
 
@@ -37,6 +49,10 @@ Message: ${form.message}`;
         <p className="text-amber-700 mb-6 text-lg text-center">
           Have a question or want to book a party? We're here to help!
         </p>
+
+        {error && (
+          <p className="text-red-500 text-center mb-4">{error}</p>
+        )}
 
         <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
@@ -70,6 +86,16 @@ Message: ${form.message}`;
               onChange={handleChange}
               className="border rounded-lg p-3 bg-amber-50 h-32"
               placeholder="Write your message..."
+            />
+          </div>
+
+          {/* 🛡️ CAPTCHA */}
+          <div className="md:col-span-2">
+            <Turnstile
+              siteKey="0x4AAAAAACGmM0HxdRwa-hBy"
+              onSuccess={(token) => setCaptchaToken(token)}
+              onError={() => setCaptchaToken(null)}
+              options={{ theme: "light" }}
             />
           </div>
 
