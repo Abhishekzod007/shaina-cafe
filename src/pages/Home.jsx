@@ -279,7 +279,7 @@ const scrollLeft = () =>
     <img
       src={concertImg}
       alt="Live music and events at Shaina Café Rawatsar"
-       aria-hidden="true"
+      
       loading="lazy"
       decoding="async"
       className="absolute inset-0 w-full h-full object-cover"
@@ -291,7 +291,7 @@ const scrollLeft = () =>
     <img
       src={HppyBirthdayImg}
       alt="Birthday party celebration at Shaina Café Rawatsar"
-       aria-hidden="true"
+      
       loading="lazy"
       decoding="async"
       className="absolute inset-0 w-full h-full object-cover"
@@ -303,7 +303,7 @@ const scrollLeft = () =>
     <img
       src={partImg}
       alt="Party and group celebration space at Shaina Café Rawatsar"
-       aria-hidden="true"
+      
       loading="lazy"
       decoding="async"
       className="absolute inset-0 w-full h-full object-cover"
