@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="md:col-span-4">
           <h2 className="text-2xl font-bold mb-2">Shaina Café Rawatsar</h2>
           <p className="text-amber-700 leading-relaxed">
-            Serving the best coffee and snacks to travelers on the 
+            Serving the best coffee and snacks to travellers on the 
             Ganganagar–Jaipur Highway, near Hanumangarh, Rajasthan, India. A perfect stop for freshness.
           </p>
 
